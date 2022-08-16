@@ -1,12 +1,13 @@
 import './App.css';
-import { createTheme, ThemeProvider, useTheme } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material';
 import { Route, Routes } from 'react-router-dom';
 import Home from './Home';
 import { blue, purple } from '@mui/material/colors';
 const theme = createTheme({
   palette: {
     primary:{
-      main:"#000000"
+      main:"#ffffff",
+      light:"blue",
     },
     secondary: purple,
     background: blue,

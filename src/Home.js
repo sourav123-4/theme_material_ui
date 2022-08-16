@@ -5,21 +5,48 @@ import SideBar from "./SideBar";
 import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles((theme) =>({
-  main:{
+  mainContainer:{
+    height:"200px",
+    backgroundColor:"green",
+    textAlign:"center",
+  },
+  main1:{
     backgroundColor:"black",
     [theme.breakpoints.down('md')]: {
-      backgroundColor: "purple",
+      backgroundColor: theme.palette.primary.main,
+    },
+    [theme.breakpoints.up('md')]: {
+      backgroundColor: theme.palette.secondary.main,
+      color: theme.palette.primary.main,
+    },
+    [theme.breakpoints.up('lg')]: {
+      backgroundColor: theme.palette.primary.light,
+      color: theme.palette.primary.main,
+    },
+  },
+  main2:{
+    backgroundColor:"black",
+    [theme.breakpoints.down('md')]: {
+      backgroundColor: theme.palette.primary.main,
+    },
+    [theme.breakpoints.up('md')]: {
+      backgroundColor: theme.palette.primary.light,
+      color: theme.palette.primary.main,
+    },
+    [theme.breakpoints.up('lg')]: {
+      backgroundColor: theme.palette.secondary.main,
+      color: theme.palette.primary.main,
     },
   },
 }))
 function Home() {
   const classes = useStyles();
   return (
-    <Grid container>
-      <Grid item lg={2}  className={classes.main}>
+    <Grid container className={classes.mainContainer}>
+      <Grid item lg={2}  className={classes.main1}>
         <SideBar />
       </Grid>
-      <Grid item lg={10}>
+      <Grid item lg={10} className={classes.main2}>
         <NavBar />
       </Grid>
     </Grid>
