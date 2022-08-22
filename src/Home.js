@@ -1,13 +1,14 @@
 import React from "react";
-import { Grid } from "@mui/material";
+import { Box, Button, Grid, Input } from "@mui/material";
 import NavBar from "./NavBar";
 import SideBar from "./SideBar";
-import { makeStyles } from '@mui/styles';
+import { makeStyles,styled } from '@mui/styles';
+import Avatar from '@mui/material/Avatar';
 
 const useStyles = makeStyles((theme) =>({
   mainContainer:{
     height:"200px",
-    backgroundColor:"green",
+    // backgroundColor:"green",
     textAlign:"center",
   },
   main1:{
@@ -39,16 +40,23 @@ const useStyles = makeStyles((theme) =>({
     },
   },
 }))
+
+
 function Home() {
   const classes = useStyles();
   return (
     <Grid container className={classes.mainContainer}>
-      <Grid item lg={2}  className={classes.main1}>
+      {/* <Grid item lg={2}  className={classes.main1}>
         <SideBar />
       </Grid>
       <Grid item lg={10} className={classes.main2}>
         <NavBar />
-      </Grid>
+      </Grid> */}
+      <Box sx={{ height:"300px", width:"300px",bgcolor: 'secondary.main',}}>
+      <Button sx={{bgcolor:'secondary.dark'}}>Go</Button>
+      </Box>
+      <Button sx={{bgcolor:'secondary.dark'}}>Go</Button>
+      <Input placeholder="hello all"/>
     </Grid>
   );
 }
